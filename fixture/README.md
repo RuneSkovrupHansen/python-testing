@@ -1,8 +1,8 @@
-# fixtures/
+# fixture/
 
 ### Description
 
-The goal is to use test fixtures while unit testing some simple units.
+The goal is to use test fixture while unit testing some simple units.
 
 The *unittest* library will be used for testing.
 
@@ -18,4 +18,4 @@ To run the tests use the following command:
 
 `python3 -m unittest test_tools.py`
 
-Remember to run the tests from the fixtures/ directory.
+Remember to run the tests from the fixture/ directory.
