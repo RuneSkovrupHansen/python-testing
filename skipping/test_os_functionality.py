@@ -3,6 +3,7 @@ import distro
 import unittest
 import os_functionality
 
+# Note that entire units can also be skipped
 class TestOsFunctionality(unittest.TestCase):
 
     # Conditional skipping using skipUnless()
@@ -23,8 +24,8 @@ class TestOsFunctionality(unittest.TestCase):
     def test_do_stuff_debian(self) -> None:
         self.assertTrue(os_functionality.do_stuff_debian())
 
-    # Flat out skipping test of deprecated functionality using skip()
-    @unittest.skip("'do_stuff_deprecated() is deprecated")
+    # Expect failure of deprecated function
+    @unittest.expectedFailure
     def test_do_stuff_deprecated(self) -> None:
         self.assertTrue(os_functionality.do_stuff_deprecated())
 

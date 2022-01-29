@@ -14,8 +14,7 @@ def do_stuff_debian() -> bool:
     return distro.name() == "Debian GNU/Linux"
 
 def do_stuff_deprecated() -> bool:
-    # Do some stuff, deprecated so should no longer be used
-    return True
+    return False
 
 def main():
     pass
