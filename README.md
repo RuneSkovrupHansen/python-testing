@@ -12,3 +12,9 @@ Three libraries will be used for testing, the built-in *unittest*, *nose2* and *
 The goal is to use test fixtures while unit testing some simple units.
 
 The *unittest* library will be used for testing.
+
+### skipping/
+
+The goal is to use the unittest decorators to skip tests.
+
+The *unittest* library will be used for testing.
