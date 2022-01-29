@@ -9,7 +9,7 @@ Three libraries will be used for testing, the built-in *unittest*, *nose2* and *
 
 ### fixture/
 
-The goal is to use test fixture while unit testing some simple units.
+The goal is to use test fixtures while unit testing some simple units.
 
 The *unittest* library will be used for testing.
 
