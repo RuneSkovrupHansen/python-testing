@@ -18,3 +18,9 @@ The *unittest* library will be used for testing.
 The goal is to use the unittest decorators to skip tests.
 
 The *unittest* library will be used for testing.
+
+### subtest/
+
+The goal is to use subtests to test similar testing scenarios in a single test and illustrate how is can be useful to show several failed cases of a test.
+
+The *unittest* library will be used for testing.
