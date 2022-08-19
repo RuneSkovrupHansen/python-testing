@@ -4,23 +4,25 @@ from mimetypes import init
 import unittest
 import coal_mine
 
+
 class TestCoalMine(unittest.TestCase):
 
     def setUp(self):
         self.cm = coal_mine.CoalMine()
-    
+
     # Test that worker property sets values in range correctly
     def test_workers_in_range(self):
         for workers in range(self.cm.WORKER_THRESHOLD+1):
-            with self.subTest(workers=workers): # Note that parameter and value name must match
+            # Note that parameter and value name must match
+            with self.subTest(workers=workers):
                 self.cm.workers = workers
                 self.assertEqual(self.cm.workers, workers)
-    
+
     # Test that worker property sets negative values to zero
     def test_workers_negative(self):
         self.cm.workers = -1
         self.assertEqual(self.cm.workers, 0)
-    
+
     # Test that worker property sets values exceeding threshold to threshold
     def test_workers_above_threshold(self):
         self.cm.workers = self.cm.WORKER_THRESHOLD+1
@@ -30,7 +32,7 @@ class TestCoalMine(unittest.TestCase):
     
     The test is purposely set up to fail since it expects
     that the output scales linearly with the number of workers
-    and the diminishing returns are not taken into accout
+    and the diminishing returns are not taken into account
     
     Because subTest() is used the test will show all of the
     failed example with messages similar to
@@ -49,10 +51,13 @@ class TestCoalMine(unittest.TestCase):
         for workers in range(self.cm.WORKER_THRESHOLD+1):
             with self.subTest(workers=workers):
                 self.cm.workers = workers
-                self.assertEqual(self.cm.output, workers*self.cm.BASE_WORKER_OUTPUT)
-        
+                self.assertEqual(self.cm.output, workers *
+                                 self.cm.BASE_WORKER_OUTPUT)
+
+
 def main():
     unittest.main()
+
 
 if __name__ == "__main__":
     main()
