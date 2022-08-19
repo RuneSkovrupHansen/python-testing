@@ -34,6 +34,10 @@ To test the unit using the *nose2* library.
 
 To test using the *pytest* library.
 
+To generate test report:
+
+`python -m pytest -q test_character_pytest.py --html=report.html`
+
 ### Virtualenv
 
 Please note that running pytest inside a virtual environment can cause some issues.
