@@ -6,12 +6,13 @@ import file_tools as file_tools
 
 # Define test cases for each tool
 
+
 class TestAnagramTool(unittest.TestCase):
 
     """Set up test fixture with some strings"""
 
     def setUp(self) -> None:
-        
+
         self.anagram_string_1 = "the classroom"
         self.anagram_string_2 = "school master"
         self.non_anagram_string = "this is not an anagram"
@@ -48,7 +49,7 @@ class TestAnagramTool(unittest.TestCase):
 class TestStringTool(unittest.TestCase):
 
     """Set up test fixture consisting of a folder with three files
-    
+
     .folder/
         -- file1
         -- file2
@@ -63,13 +64,16 @@ class TestStringTool(unittest.TestCase):
         self.files = [os.path.join(self.folder, f"file{i}") for i in range(3)]
 
         os.mkdir(self.folder)
-        for f in self.files: open(f, "a").close()
+        for f in self.files:
+            open(f, "a").close()
 
     def tearDown(self) -> None:
         for f in self.files:
-            if os.path.exists(f): os.remove(f)
+            if os.path.exists(f):
+                os.remove(f)
 
-        if os.path.exists(self.folder): os.rmdir(self.folder)
+        if os.path.exists(self.folder):
+            os.rmdir(self.folder)
 
     def test_remove_file(self) -> None:
         self.assertTrue(os.path.exists(self.files[0]))
@@ -77,9 +81,11 @@ class TestStringTool(unittest.TestCase):
         self.assertFalse(os.path.exists(self.files[0]))
 
     def test_remove_files(self) -> None:
-        for f in self.files: self.assertTrue(os.path.exists(f))
+        for f in self.files:
+            self.assertTrue(os.path.exists(f))
         file_tools.remove_files(*self.files)
-        for f in self.files: self.assertFalse(os.path.exists(f))
+        for f in self.files:
+            self.assertFalse(os.path.exists(f))
 
     def test_clear_folder(self) -> None:
         self.assertTrue(os.listdir(self.folder))
@@ -91,6 +97,6 @@ class TestStringTool(unittest.TestCase):
         file_tools.remove_folder(self.folder)
         self.assertFalse(os.path.exists(self.folder))
 
+
 if __name__ == "__main__":
     unittest.main()
-

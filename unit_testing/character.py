@@ -30,7 +30,6 @@ class Character:
 
         return string in ["bugger", "damn", "asshat"]
 
-
     def set_name(self, name):
 
         if not isinstance(name, str):
